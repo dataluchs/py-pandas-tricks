@@ -4,7 +4,7 @@ import seaborn as sns
 
 # seaborn comes with build in datasets which we will use
 df = sns.load_dataset('tips')
-print(df)
+
 # show top and bottom of dataset
 df.head()
 df.tail()
@@ -20,5 +20,7 @@ df.describe()  # analyzes numberic numbers only
 # if other data types are there as well you can include it, here with object
 df.describe(include=np.object)
 
-# count number of the items of a specfic column
+# count number of the items of specfic column
 df['day'].value_counts()
+
+# # slice dataframe with loc
