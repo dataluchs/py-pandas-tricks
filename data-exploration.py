@@ -23,4 +23,20 @@ df.describe(include=np.object)
 # count number of the items of specfic column
 df['day'].value_counts()
 
-# # slice dataframe with loc
+# check unique values of column
+df['day'].unique()
+
+# print df as nice markdown table # requires package tabulate: https://pypi.org/project/tabulate/
+df.to_markdown()
+df.to_markdown(tablefmt="grid")
+
+# .loc function
+# if index is set, use .loc to explore by index
+df.set_index('column_to_index', inplace=True)
+df.loc['indexvalue']
+df.loc[['indexvalue1', 'indexvalue2']]
+
+# select additionally by column with selected index values
+df.loc[['indexvalue1', 'indexvalue2'], ['column_name1', 'column_name2']]
+# select column range by selected indexes
+df.loc[['indexvalue1', 'indexvalue2'], 'column_name1':'column_name2']
